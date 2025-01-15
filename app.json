@@ -28,6 +28,10 @@
       "favicon": "./assets/images/favicon.png",
       "bundler": "metro"
     },
+    "locales": {
+      "cs": "./src/locales/cs.json",
+      "en": "./src/locales/en.json"
+    },
     "plugins": [
       [
         "expo-router",
