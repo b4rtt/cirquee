@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.ts",
   "scripts": {
-    "clean": "rm -rf node_modules yarn.lock && yarn install",
+    "clean": "rm -rf node_modules yarn.lock && yarn install && yarn expo prebuild",
     "prebuild": "yarn expo prebuild",
     "start": "NODE_ENV=production yarn expo start -c",
     "start:dev": "NODE_ENV=development yarn expo start -c",
