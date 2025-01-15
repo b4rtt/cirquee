@@ -3,6 +3,7 @@ import { ExpoConfig, ConfigContext } from 'expo/config';
 export default ({ config }: ConfigContext): ExpoConfig => {
   const envConfig: ExpoConfig = {
     ...config,
+    scheme: process.env.EXPO_PUBLIC_SCHEME ?? '',
     slug: process.env.EXPO_PUBLIC_SLUG ?? '',
     name: process.env.EXPO_PUBLIC_NAME ?? '',
     ios: {
