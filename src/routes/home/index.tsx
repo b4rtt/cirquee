@@ -4,6 +4,7 @@ import React from 'react';
 import { View, Text, Button } from 'react-native';
 
 import ZustandTest from '@/components/ZustandTest';
+import { fonts } from '@/theme';
 
 const Home = () => {
   const { colorScheme, setColorScheme } = useColorScheme();
@@ -13,7 +14,7 @@ const Home = () => {
     <View
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
       className="bg-blue-500 dark:bg-red-500">
-      <Text>Home {colorScheme}</Text>
+      <Text style={{ fontFamily: fonts.openSans.bold }}>Home {colorScheme}</Text>
       <Button title="Go to Index" onPress={() => router.back()} />
 
       <View style={{ height: 100 }} />
