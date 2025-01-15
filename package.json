@@ -4,6 +4,7 @@
   "main": "index.ts",
   "scripts": {
     "clean": "rm -rf node_modules yarn.lock && yarn install",
+    "prebuild": "yarn expo prebuild",
     "start": "NODE_ENV=production yarn expo start -c",
     "start:dev": "NODE_ENV=development yarn expo start -c",
     "android": "NODE_ENV=production yarn expo start --android",
