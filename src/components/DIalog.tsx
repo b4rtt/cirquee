@@ -1,51 +1,48 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import { Heading } from './ui/heading';
-import { Text } from './ui/text';
 import {
-  AlertDialog,
-  AlertDialogBackdrop,
-  AlertDialogBody,
-  AlertDialogContent,
-  AlertDialogFooter,
-  AlertDialogHeader,
-} from '../components/ui/alert-dialog';
+  Actionsheet,
+  ActionsheetItemText,
+  ActionsheetItem,
+  ActionsheetBackdrop,
+  ActionsheetContent,
+  ActionsheetDragIndicator,
+  ActionsheetDragIndicatorWrapper,
+} from './ui/actionsheet';
 import { Button, ButtonText } from '../components/ui/button';
 
 const Dialog: React.FC = () => {
-  const [showAlertDialog, setShowAlertDialog] = useState(false);
-
-  const handleClose = () => setShowAlertDialog(false);
+  const [showActionsheet, setShowActionsheet] = React.useState(false);
+  const handleClose = () => setShowActionsheet(false);
 
   return (
     <>
-      <Button onPress={() => setShowAlertDialog(true)}>
-        <ButtonText>Open Dialog</ButtonText>
+      <Button onPress={() => setShowActionsheet(true)}>
+        <ButtonText>Open Actionsheet</ButtonText>
       </Button>
-      <AlertDialog isOpen={showAlertDialog} onClose={handleClose} size="md">
-        <AlertDialogBackdrop />
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <Heading className="text-typography-950 font-semibold" size="md">
-              Are you sure you want to delete this post?
-            </Heading>
-          </AlertDialogHeader>
-          <AlertDialogBody className="mt-3 mb-4">
-            <Text size="sm">
-              Deleting the post will remove it permanently and cannot be undone. Please confirm if
-              you want to proceed.
-            </Text>
-          </AlertDialogBody>
-          <AlertDialogFooter className="">
-            <Button variant="outline" action="secondary" onPress={handleClose} size="sm">
-              <ButtonText>Cancel</ButtonText>
-            </Button>
-            <Button size="sm" onPress={handleClose}>
-              <ButtonText>Delete</ButtonText>
-            </Button>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+      <Actionsheet isOpen={showActionsheet} onClose={handleClose}>
+        <ActionsheetBackdrop />
+        <ActionsheetContent>
+          <ActionsheetDragIndicatorWrapper>
+            <ActionsheetDragIndicator />
+          </ActionsheetDragIndicatorWrapper>
+          <ActionsheetItem onPress={() => alert('x')}>
+            <ActionsheetItemText>Edit Message</ActionsheetItemText>
+          </ActionsheetItem>
+          <ActionsheetItem onPress={handleClose}>
+            <ActionsheetItemText>Mark Unread</ActionsheetItemText>
+          </ActionsheetItem>
+          <ActionsheetItem onPress={handleClose}>
+            <ActionsheetItemText>Remind Me</ActionsheetItemText>
+          </ActionsheetItem>
+          <ActionsheetItem onPress={handleClose}>
+            <ActionsheetItemText>Add to Saved Items</ActionsheetItemText>
+          </ActionsheetItem>
+          <ActionsheetItem isDisabled onPress={handleClose}>
+            <ActionsheetItemText>Delete</ActionsheetItemText>
+          </ActionsheetItem>
+        </ActionsheetContent>
+      </Actionsheet>
     </>
   );
 };
