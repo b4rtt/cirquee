@@ -4,7 +4,7 @@
   "license": "MIT",
   "main": "expo-router/entry",
   "scripts": {
-    "clean": "rm -rf node_modules yarn.lock ios android && yarn install && yarn expo prebuild",
+    "clean": "rm -rf node_modules yarn.lock ios android && yarn install",
     "prebuild": "yarn expo prebuild",
     "start": "NODE_ENV=production yarn expo start -c",
     "start:dev": "NODE_ENV=development yarn expo start -c",

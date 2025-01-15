@@ -12,8 +12,6 @@ export default function RootLayout(): ReactNode {
       try {
         await Promise.all([loadImages(), loadFonts()]);
 
-        // wait 10 seconds
-        await new Promise(resolve => setTimeout(resolve, 10000));
         await SplashScreen.hideAsync();
       } catch (err) {
         console.log('[##] preload error:', err);

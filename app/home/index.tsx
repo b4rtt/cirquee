@@ -7,7 +7,7 @@ const Home = () => {
     <View
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'blue' }}>
       <Text>Home</Text>
-      <Button title="Go to Index" onPress={() => router.push('/')} />
+      <Button title="Go to Index" onPress={() => router.back()} />
     </View>
   );
 };
