@@ -14,7 +14,7 @@ const Home = () => {
     <View
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
       className="bg-blue-500 dark:bg-red-500">
-      <Text style={{ fontFamily: fonts.openSans.bold }}>Home {colorScheme}</Text>
+      <Text style={{ fontFamily: fonts.openSans.regular }}>Home {colorScheme}</Text>
       <Button title="Go to Index" onPress={() => router.back()} />
 
       <View style={{ height: 100 }} />
