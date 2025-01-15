@@ -1,5 +1,5 @@
-import { Dimensions, Platform } from 'react-native';
 import Constants from 'expo-constants';
+import { Dimensions, Platform } from 'react-native';
 
 export const { width: windowWidth, height: windowHeight } = Dimensions.get('window');
 

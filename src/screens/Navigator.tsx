@@ -1,6 +1,7 @@
+import * as SplashScreen from 'expo-splash-screen';
 import React, { useEffect } from 'react';
 import { View, Text } from 'react-native';
-import * as SplashScreen from 'expo-splash-screen';
+
 import { loadImages, loadFonts } from '@/theme';
 
 SplashScreen.preventAutoHideAsync();
