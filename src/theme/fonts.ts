@@ -1,4 +1,4 @@
-import { loadAsync } from "expo-font";
+import { loadAsync } from 'expo-font';
 
 export const fonts = {
   //   openSan: {

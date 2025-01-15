@@ -1,9 +1,10 @@
 {
   "name": "cirquee",
   "version": "1.0.0",
+  "license": "MIT",
   "main": "index.ts",
   "scripts": {
-    "clean": "rm -rf node_modules yarn.lock && yarn install && yarn expo prebuild",
+    "clean": "rm -rf node_modules yarn.lock ios android && yarn install && yarn expo prebuild",
     "prebuild": "yarn expo prebuild",
     "start": "NODE_ENV=production yarn expo start -c",
     "start:dev": "NODE_ENV=development yarn expo start -c",
@@ -11,8 +12,7 @@
     "android:dev": "NODE_ENV=development yarn expo start --android",
     "ios": "NODE_ENV=production yarn expo start --ios",
     "ios:dev": "NODE_ENV=development yarn expo start --ios",
-    "doctor:dev": "EXPO_NO_DOTENV=1 dotenv -e .env.development -- yarn expo-doctor",
-    "format": "prettier --config .prettierrc src/**/*.{ts,tsx} --write",
+    "format": "yarn prettier --config .prettierrc src/**/*.{ts,tsx} --write",
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {

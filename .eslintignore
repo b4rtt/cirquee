@@ -9,11 +9,6 @@
 **/__generated__/**
 **/build/**
 
-# Git submodules
-
-/react-native-lab/react-native/**
-/docs/react-native-website/**
-
 # Other
 
 **/android/**

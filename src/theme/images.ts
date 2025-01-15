@@ -1,4 +1,4 @@
-import { Asset } from "expo-asset";
+import { Asset } from 'expo-asset';
 
 export const images: { [key: string]: ReturnType<typeof require> } = {
   //   logo: require('@/assets/images/logo.svg'),
@@ -8,7 +8,7 @@ export const images: { [key: string]: ReturnType<typeof require> } = {
 
 // preload images
 const preloadImages = () =>
-  Object.keys(images).map((key) => {
+  Object.keys(images).map(key => {
     return Asset.fromModule(images[key] as number).downloadAsync();
   });
 
