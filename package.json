@@ -1,0 +1,30 @@
+{
+  "name": "chance-liga",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "scripts": {
+    "clean": "rm -rf node_modules yarn.lock && yarn install",
+    "start": "NODE_ENV=production yarn expo start -c",
+    "start:dev": "NODE_ENV=development yarn expo start -c",
+    "android": "NODE_ENV=production yarn expo start --android",
+    "android:dev": "NODE_ENV=development yarn expo start --android",
+    "ios": "NODE_ENV=production yarn expo start --ios",
+    "ios:dev": "NODE_ENV=development yarn expo start --ios",
+    "doctor:dev": "EXPO_NO_DOTENV=1 dotenv -e .env.development -- yarn expo-doctor",
+    "format": "prettier --config .prettierrc src/**/*.{ts,tsx} --write",
+    "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx"
+  },
+  "dependencies": {
+    "expo": "~52.0.25",
+    "expo-splash-screen": "^0.29.20",
+    "expo-status-bar": "~2.0.1",
+    "react": "18.3.1",
+    "react-native": "0.76.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@types/react": "~18.3.12",
+    "typescript": "^5.3.3"
+  },
+  "private": true
+}
