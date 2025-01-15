@@ -1,19 +1,11 @@
 'use client';
-import React from 'react';
 import { createAlertDialog } from '@gluestack-ui/alert-dialog';
-import { tva } from '@gluestack-ui/nativewind-utils/tva';
-import {
-  withStyleContext,
-  useStyleContext,
-} from '@gluestack-ui/nativewind-utils/withStyleContext';
-
-import { cssInterop } from 'nativewind';
 import type { VariantProps } from '@gluestack-ui/nativewind-utils';
-import {
-  Motion,
-  AnimatePresence,
-  createMotionAnimatedComponent,
-} from '@legendapp/motion';
+import { tva } from '@gluestack-ui/nativewind-utils/tva';
+import { withStyleContext, useStyleContext } from '@gluestack-ui/nativewind-utils/withStyleContext';
+import { Motion, AnimatePresence, createMotionAnimatedComponent } from '@legendapp/motion';
+import { cssInterop } from 'nativewind';
+import React from 'react';
 import { View, Pressable, ScrollView } from 'react-native';
 
 const AnimatedPressable = createMotionAnimatedComponent(Pressable);
@@ -28,7 +20,7 @@ const UIAccessibleAlertDialog = createAlertDialog({
   Header: View,
   Footer: View,
   Backdrop: AnimatedPressable,
-  AnimatePresence: AnimatePresence,
+  AnimatePresence,
 });
 
 cssInterop(Motion.View, { className: 'style' });
@@ -78,9 +70,7 @@ const alertDialogBackdropStyle = tva({
   base: 'absolute left-0 top-0 right-0 bottom-0 bg-background-dark web:cursor-default',
 });
 
-type IAlertDialogProps = React.ComponentPropsWithoutRef<
-  typeof UIAccessibleAlertDialog
-> &
+type IAlertDialogProps = React.ComponentPropsWithoutRef<typeof UIAccessibleAlertDialog> &
   VariantProps<typeof alertDialogStyle>;
 
 type IAlertDialogContentProps = React.ComponentPropsWithoutRef<
@@ -103,9 +93,7 @@ type IAlertDialogFooterProps = React.ComponentPropsWithoutRef<
 > &
   VariantProps<typeof alertDialogFooterStyle>;
 
-type IAlertDialogBodyProps = React.ComponentPropsWithoutRef<
-  typeof UIAccessibleAlertDialog.Body
-> &
+type IAlertDialogBodyProps = React.ComponentPropsWithoutRef<typeof UIAccessibleAlertDialog.Body> &
   VariantProps<typeof alertDialogBodyStyle>;
 
 type IAlertDialogBackdropProps = React.ComponentPropsWithoutRef<

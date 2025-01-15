@@ -38,7 +38,8 @@
         {
           "root": "./src/routes"
         }
-      ]
+      ],
+      "expo-localization"
     ]
   }
 }
