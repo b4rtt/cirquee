@@ -5,11 +5,10 @@ import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'nativewind';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
-import { Text } from 'react-native';
 
 import { GluestackUIProvider } from '../components/ui/gluestack-ui-provider';
 
-import { loadImages, loadFonts, fonts } from '@/theme';
+import { loadImages, loadFonts } from '@/theme';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -35,10 +34,6 @@ export default function RootLayout(): ReactNode {
     <>
       <GluestackUIProvider mode={colorScheme}>
         <StatusBar style={colorScheme} />
-
-        <Text style={{ fontFamily: fonts.openSans.regular, marginTop: 100, color: 'green' }}>
-          {colorScheme}
-        </Text>
 
         <Stack screenOptions={{}}>
           <Stack.Screen
