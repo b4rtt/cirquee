@@ -6,13 +6,41 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     scheme: process.env.EXPO_PUBLIC_SCHEME ?? '',
     slug: process.env.EXPO_PUBLIC_SLUG ?? '',
     name: process.env.EXPO_PUBLIC_NAME ?? '',
+    icon:
+      process.env.NODE_ENV === 'development'
+        ? './assets/images/icon-dev.png'
+        : './assets/images/icon.png',
     ios: {
       ...config.ios,
       bundleIdentifier: process.env.EXPO_PUBLIC_IOS_BUNDLE_IDENTIFIER,
     },
+    splash: {
+      ...config.splash,
+      image:
+        process.env.NODE_ENV === 'development'
+          ? './assets/images/splash-icon-dev.png'
+          : './assets/images/splash-icon.png',
+      resizeMode: 'contain',
+      backgroundColor: '#ffffff',
+    },
     android: {
       ...config.android,
       package: process.env.EXPO_PUBLIC_IOS_ANDROID_PACKAGE,
+      adaptiveIcon: {
+        foregroundImage:
+          process.env.NODE_ENV === 'development'
+            ? './assets/images/adaptive-icon-dev.png'
+            : './assets/images/adaptive-icon.png',
+        backgroundColor: '#ffffff',
+      },
+    },
+    web: {
+      ...config.web,
+      favicon:
+        process.env.NODE_ENV === 'development'
+          ? './assets/images/favicon-dev.png'
+          : './assets/images/favicon.png',
+      bundler: 'metro',
     },
     updates: {
       url: `https://u.expo.dev/${process.env.EXPO_PUBLIC_PROJECT_ID}`,
