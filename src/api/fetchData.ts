@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 interface CoinData {
   mint: string;
   name: string;
@@ -33,14 +35,10 @@ interface CoinData {
 
 export const fetchData = async (): Promise<CoinData> => {
   try {
-    const response = await fetch(
+    const response = await axios.get(
       'https://frontend-api-v2.pump.fun/coins/king-of-the-hill?includeNsfw=false',
     );
-    if (!response.ok) {
-      throw new Error('Network response was not ok');
-    }
-    const data: CoinData = await response.json();
-    return data;
+    return response.data;
   } catch (error) {
     console.error('Fetch data failed:', error);
     throw error;

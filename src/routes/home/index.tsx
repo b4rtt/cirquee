@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import { router } from 'expo-router';
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { View, Text, Button, Image } from 'react-native';
 
 import { fetchData } from '@/api/fetchData';
 import Dialog from '@/components/Dialog';
@@ -26,9 +26,10 @@ const Home = () => {
 
       {isError && <Text>Error: {error?.message}</Text>}
 
-      {!isPending && !isError && (
-        <Text style={{ fontFamily: fonts.openSans.regular }}>Home {JSON.stringify(data)}</Text>
-      )}
+      {!isPending && !isError && <Text style={{ fontFamily: fonts.openSans.regular }}>Home</Text>}
+
+      <Image source={{ uri: data?.image_uri }} style={{ width: 100, height: 100 }} />
+
       <Button title="Go to Index" onPress={() => router.back()} />
       <Avatar size="md">
         <AvatarFallbackText>Jane Doe</AvatarFallbackText>
