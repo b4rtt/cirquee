@@ -2,7 +2,7 @@ import { router } from 'expo-router';
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
-import Dialog from '@/components/DIalog';
+import Dialog from '@/components/Dialog';
 import ZustandTest from '@/components/ZustandTest';
 import { Avatar, AvatarBadge, AvatarFallbackText, AvatarImage } from '@/components/ui/avatar';
 import { fonts } from '@/theme';
