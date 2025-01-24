@@ -14,7 +14,7 @@
     "ios:dev": "NODE_ENV=development yarn expo start --ios",
     "format": "yarn prettier --config .prettierrc src/**/*.{ts,tsx} --write",
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
-    "web": "DARK_MODE=media undefined"
+    "web": "DARK_MODE=media expo start --web"
   },
   "dependencies": {
     "@expo/html-elements": "0.4.2",
