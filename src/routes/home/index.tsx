@@ -1,18 +1,34 @@
+import { useQuery } from '@tanstack/react-query';
 import { router } from 'expo-router';
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
+import { fetchData } from '@/api/fetchData';
 import Dialog from '@/components/Dialog';
 import ZustandTest from '@/components/ZustandTest';
 import { Avatar, AvatarBadge, AvatarFallbackText, AvatarImage } from '@/components/ui/avatar';
+import { useRefreshOnFocus } from '@/hooks/useRefreshOnFocus';
 import { fonts } from '@/theme';
 
 const Home = () => {
+  const { isPending, isError, data, error, refetch, isRefetching } = useQuery({
+    queryKey: ['todos'],
+    queryFn: fetchData,
+  });
+
+  useRefreshOnFocus(refetch);
+
   return (
     <View
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
       className="bg-blue-500 dark:bg-red-500">
-      <Text style={{ fontFamily: fonts.openSans.regular }}>Home </Text>
+      {(isPending || isRefetching) && <Text>Loading...</Text>}
+
+      {isError && <Text>Error: {error?.message}</Text>}
+
+      {!isPending && !isError && (
+        <Text style={{ fontFamily: fonts.openSans.regular }}>Home {JSON.stringify(data)}</Text>
+      )}
       <Button title="Go to Index" onPress={() => router.back()} />
       <Avatar size="md">
         <AvatarFallbackText>Jane Doe</AvatarFallbackText>

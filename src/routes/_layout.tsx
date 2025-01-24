@@ -1,5 +1,6 @@
 import '../../global.css';
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Stack, SplashScreen } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'nativewind';
@@ -11,6 +12,7 @@ import { GluestackUIProvider } from '../components/ui/gluestack-ui-provider';
 import { loadImages, loadFonts } from '@/theme';
 
 SplashScreen.preventAutoHideAsync();
+const queryClient = new QueryClient();
 
 export default function RootLayout(): ReactNode {
   const { colorScheme, setColorScheme } = useColorScheme();
@@ -31,7 +33,7 @@ export default function RootLayout(): ReactNode {
   }, []);
 
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
       <GluestackUIProvider mode={colorScheme}>
         <StatusBar style={colorScheme} />
 
@@ -54,6 +56,6 @@ export default function RootLayout(): ReactNode {
           />
         </Stack>
       </GluestackUIProvider>
-    </>
+    </QueryClientProvider>
   );
 }
