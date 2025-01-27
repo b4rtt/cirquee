@@ -3,7 +3,8 @@ import * as Device from 'expo-device';
 import * as Notifications from 'expo-notifications';
 import { useEffect, useRef } from 'react';
 import { Text, View, Button, Platform } from 'react-native';
-import { create } from 'zustand';
+
+import { useNotificationStore } from '@/store/useNotificationStore';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -34,7 +35,7 @@ async function sendPushNotification(expoPushToken: string) {
 }
 
 function handleRegistrationError(errorMessage: string) {
-  alert(errorMessage);
+  console.error(errorMessage);
   throw new Error(errorMessage);
 }
 
@@ -81,19 +82,6 @@ async function registerForPushNotificationsAsync() {
 }
 
 export const PushNotifications = () => {
-  const useNotificationStore = create<{
-    expoPushToken: string;
-    notification: Notifications.Notification | undefined;
-    setExpoPushToken: (token: string) => void;
-    setNotification: (notification: Notifications.Notification | undefined) => void;
-  }>(set => ({
-    expoPushToken: '',
-    notification: undefined,
-    setExpoPushToken: (token: string) => set({ expoPushToken: token }),
-    setNotification: (notification: Notifications.Notification | undefined) =>
-      set({ notification }),
-  }));
-
   const { expoPushToken, notification, setExpoPushToken, setNotification } = useNotificationStore();
   const notificationListener = useRef<Notifications.EventSubscription>();
   const responseListener = useRef<Notifications.EventSubscription>();
