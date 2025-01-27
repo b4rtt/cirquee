@@ -4,6 +4,7 @@ import { View, Text, Button, Image } from 'react-native';
 
 import Dialog from '@/components/Dialog';
 import ZustandTest from '@/components/ZustandTest';
+import ZustandView from '@/components/ZustandView';
 import { Avatar, AvatarBadge, AvatarFallbackText, AvatarImage } from '@/components/ui/avatar';
 import { useData } from '@/hooks/useData';
 import { fonts } from '@/theme';
@@ -36,6 +37,8 @@ const Home = () => {
       <View style={{ height: 100 }} />
       <Dialog />
       <ZustandTest />
+
+      <ZustandView />
     </View>
   );
 };
