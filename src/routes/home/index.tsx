@@ -1,32 +1,25 @@
-import { useQuery } from '@tanstack/react-query';
 import { router } from 'expo-router';
 import React from 'react';
 import { View, Text, Button, Image } from 'react-native';
 
-import { fetchData } from '@/api/fetchData';
 import Dialog from '@/components/Dialog';
 import ZustandTest from '@/components/ZustandTest';
 import { Avatar, AvatarBadge, AvatarFallbackText, AvatarImage } from '@/components/ui/avatar';
-import { useRefreshOnFocus } from '@/hooks/useRefreshOnFocus';
+import { useData } from '@/hooks/useData';
 import { fonts } from '@/theme';
 
 const Home = () => {
-  const { isPending, isError, data, error, refetch, isRefetching } = useQuery({
-    queryKey: ['todos'],
-    queryFn: fetchData,
-  });
-
-  useRefreshOnFocus(refetch);
+  const { isLoading, isError, data, error, isRefetching } = useData();
 
   return (
     <View
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
       className="bg-blue-500 dark:bg-red-500">
-      {(isPending || isRefetching) && <Text>Loading...</Text>}
+      {(isLoading || isRefetching) && <Text>Loading...</Text>}
 
       {isError && <Text>Error: {error?.message}</Text>}
 
-      {!isPending && !isError && <Text style={{ fontFamily: fonts.openSans.regular }}>Home</Text>}
+      {!isLoading && !isError && <Text style={{ fontFamily: fonts.openSans.regular }}>Home</Text>}
 
       <Image source={{ uri: data?.image_uri }} style={{ width: 100, height: 100 }} />
 
