@@ -5,6 +5,7 @@ import { View, Text, Button } from 'react-native';
 import Logo from '../../assets/images/icons/test.svg';
 
 import { PushNotifications } from '@/components/PushNotifications';
+import User from '@/components/User';
 import { useTranslations } from '@/hooks/useTranslations';
 
 const Home = () => {
@@ -18,6 +19,8 @@ const Home = () => {
       <Logo width={100} height={100} />
 
       <PushNotifications />
+
+      <User />
     </View>
   );
 };

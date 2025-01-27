@@ -3,6 +3,7 @@ import React from 'react';
 import { View, Text, Button, Image } from 'react-native';
 
 import Dialog from '@/components/Dialog';
+import User from '@/components/User';
 import ZustandTest from '@/components/ZustandTest';
 import ZustandView from '@/components/ZustandView';
 import { Avatar, AvatarBadge, AvatarFallbackText, AvatarImage } from '@/components/ui/avatar';
@@ -39,6 +40,8 @@ const Home = () => {
       <ZustandTest />
 
       <ZustandView />
+
+      <User />
     </View>
   );
 };
