@@ -1,0 +1,1 @@
+enabled https://docs.expo.dev/guides/react-compiler/ EXPERIMENTAL
