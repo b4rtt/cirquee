@@ -1,9 +1,6 @@
 import { create } from 'zustand';
 
-interface User {
-  id: number;
-  name: string;
-}
+import { User } from '@/types/User';
 
 interface UserState {
   user: User | null;

@@ -13,3 +13,5 @@ export default {
   ENV: Constants.expoConfig?.extra?.ENV,
   API_URL: Constants.expoConfig?.extra?.API_URL,
 } as Config;
+
+export const DEFAULT_LOCALE = Constants.expoConfig?.extra?.DEFAULT_LOCALE;

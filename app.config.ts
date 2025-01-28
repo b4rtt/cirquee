@@ -50,6 +50,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       eas: { projectId: process.env.EXPO_PUBLIC_PROJECT_ID },
       ENV: process.env.EXPO_PUBLIC_ENV,
       API_URL: process.env.EXPO_PUBLIC_API_URL,
+      DEFAULT_LOCALE: process.env.EXPO_PUBLIC_DEFAULT_LOCALE,
     },
   };
   return envConfig;

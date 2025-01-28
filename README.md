@@ -6,13 +6,12 @@ This is an advanced React Native project built using Expo and leveraging modern 
 
 - Functional React components for a modular and reusable codebase
 - Tailwind CSS for efficient and responsive styling
+- NativeWind for styling
 - Zustand for simple and scalable state management
-- React Navigation for seamless navigation between screens
+- Expo router for navigation
 - Expo for streamlined development and deployment
 - TypeScript for enhanced type safety and developer productivity
 - ESLint and Prettier for consistent code style and quality
-- Jest and React Native Testing Library for comprehensive testing
-- Continuous Integration and Deployment (CI/CD) with GitHub Actions
 
 ## TODO
 - Add https://docs.expo.dev/guides/react-compiler/ EXPERIMENTAL
@@ -23,13 +22,14 @@ This is an advanced React Native project built using Expo and leveraging modern 
 
 - Node.js (version X.X.X)
 - Expo CLI (version X.X.X)
+- EAS CLI (version X.X.X)
 - Yarn (version X.X.X)
 
 ### Installation
 
 1. Clone the repository:
    ```
-   git clone https://github.com/your-username/your-project.git
+   git clone https://github.com/b4rtt/cirquee.git
    ```
 
 2. Navigate to the project directory:
@@ -37,9 +37,13 @@ This is an advanced React Native project built using Expo and leveraging modern 
    cd your-project
    ```
 
-3. Install the dependencies using Yarn:
+3. Install the dependencies using Yarn or npm:
    ```
    yarn install
+   ```
+   or
+   ```
+   npm install
    ```
 
 ### Running the App
@@ -57,11 +61,11 @@ To build the app for production:
 
 1. Build the app using Expo:
    ```
-   expo build:android
+   eas build -p android
    ```
    or
    ```
-   expo build:ios
+   eas build -p ios
    ```
 
 2. Follow the Expo build process to generate the production-ready app.
@@ -72,10 +76,8 @@ To build the app for production:
 - `src/screens`: Contains the main screens of the app.
 - `src/hooks`: Contains custom hooks for managing state and logic.
 - `src/store`: Contains the Zustand store for global state management.
-- `src/navigation`: Contains the navigation configuration and navigators.
 - `src/utils`: Contains utility functions and helpers.
 - `src/types`: Contains TypeScript type definitions.
-- `src/__tests__`: Contains test files for components, hooks, and utilities.
 
 ## Development Workflow
 
