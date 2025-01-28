@@ -1,1 +1,116 @@
-enabled https://docs.expo.dev/guides/react-compiler/ EXPERIMENTAL
+# React Native Project with Expo
+
+This is an advanced React Native project built using Expo and leveraging modern development practices, libraries, and tooling.
+
+## Features
+
+- Functional React components for a modular and reusable codebase
+- Tailwind CSS for efficient and responsive styling
+- Zustand for simple and scalable state management
+- React Navigation for seamless navigation between screens
+- Expo for streamlined development and deployment
+- TypeScript for enhanced type safety and developer productivity
+- ESLint and Prettier for consistent code style and quality
+- Jest and React Native Testing Library for comprehensive testing
+- Continuous Integration and Deployment (CI/CD) with GitHub Actions
+
+## TODO
+- Add https://docs.expo.dev/guides/react-compiler/ EXPERIMENTAL
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (version X.X.X)
+- Expo CLI (version X.X.X)
+- Yarn (version X.X.X)
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/your-username/your-project.git
+   ```
+
+2. Navigate to the project directory:
+   ```
+   cd your-project
+   ```
+
+3. Install the dependencies using Yarn:
+   ```
+   yarn install
+   ```
+
+### Running the App
+
+1. Start the development server:
+   ```
+   yarn start
+   ```
+
+2. Use the Expo app on your mobile device or an emulator to run the app.
+
+### Building the App
+
+To build the app for production:
+
+1. Build the app using Expo:
+   ```
+   expo build:android
+   ```
+   or
+   ```
+   expo build:ios
+   ```
+
+2. Follow the Expo build process to generate the production-ready app.
+
+## Project Structure
+
+- `src/components`: Contains reusable components used throughout the app.
+- `src/screens`: Contains the main screens of the app.
+- `src/hooks`: Contains custom hooks for managing state and logic.
+- `src/store`: Contains the Zustand store for global state management.
+- `src/navigation`: Contains the navigation configuration and navigators.
+- `src/utils`: Contains utility functions and helpers.
+- `src/types`: Contains TypeScript type definitions.
+- `src/__tests__`: Contains test files for components, hooks, and utilities.
+
+## Development Workflow
+
+1. Create a new branch for each feature or bug fix:
+   ```
+   git checkout -b feature/your-feature
+   ```
+
+2. Implement the changes and ensure the code follows the project's style guide.
+
+3. Write tests for the added or modified functionality.
+
+4. Run the tests and ensure they pass:
+   ```
+   yarn test
+   ```
+
+5. Commit your changes with descriptive commit messages:
+   ```
+   git commit -m "Add feature: your feature description"
+   ```
+
+6. Push the branch to the remote repository:
+   ```
+   git push origin feature/your-feature
+   ```
+
+7. Open a pull request on GitHub and request a code review.
+
+## Contributing
+
+Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request. Make sure to follow the project's code of conduct.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+
