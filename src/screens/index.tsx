@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import React from 'react';
-import { View, Text, Button } from 'react-native';
+import { Text, Button, SafeAreaView } from 'react-native';
 
 import Logo from '../../assets/images/icons/test.svg';
 
@@ -11,7 +11,7 @@ import { useTranslations } from '@/hooks/useTranslations';
 const Home = () => {
   const { t } = useTranslations();
   return (
-    <View
+    <SafeAreaView
       style={{
         flex: 1,
         justifyContent: 'center',
@@ -27,7 +27,7 @@ const Home = () => {
       <PushNotifications />
 
       <User />
-    </View>
+    </SafeAreaView>
   );
 };
 

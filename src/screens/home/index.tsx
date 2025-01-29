@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import React from 'react';
-import { View, Text, Button, Image } from 'react-native';
+import { View, Text, Button, Image, SafeAreaView } from 'react-native';
 
 import User from '@/components/User';
 import ZustandTest from '@/components/ZustandTest';
@@ -13,7 +13,7 @@ const Home = () => {
   const { isLoading, isError, data, error, isRefetching } = useData();
 
   return (
-    <View
+    <SafeAreaView
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
       className="bg-blue-500 dark:bg-red-500">
       {(isLoading || isRefetching) && <Text>Loading...</Text>}
@@ -37,7 +37,7 @@ const Home = () => {
       <ZustandView />
 
       <User />
-    </View>
+    </SafeAreaView>
   );
 };
 
