@@ -46,5 +46,5 @@ yarn-error.*
 android/
 ios/
 
-.firebase/*.json
-.firebase/*.plist
+firebase/*.json
+firebase/*.plist
