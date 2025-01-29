@@ -12,7 +12,13 @@ const Home = () => {
   const { t } = useTranslations();
   return (
     <View
-      style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'red' }}>
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'red',
+        paddingTop: 100,
+      }}>
       <Text>{t('home.title')}</Text>
       <Button title="Go to Home" onPress={() => router.push('/home')} />
 

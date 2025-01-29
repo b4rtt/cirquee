@@ -6,10 +6,13 @@ import User from '@/components/User';
 import ZustandTest from '@/components/ZustandTest';
 import ZustandView from '@/components/ZustandView';
 import { useData } from '@/hooks/useData';
+import { useToast } from '@/hooks/useToast';
 import { fonts } from '@/theme';
 
 const Home = () => {
   const { isLoading, isError, data, error, isRefetching } = useData();
+
+  const { show } = useToast();
 
   return (
     <View
@@ -24,6 +27,8 @@ const Home = () => {
       <Image source={{ uri: data?.image_uri }} style={{ width: 100, height: 100 }} />
 
       <Button title="Go to Index" onPress={() => router.back()} />
+
+      <Button title="Show" onPress={() => show({ text1: 'fdsf', type: 'tomatoToast' })} />
 
       <View style={{ height: 100 }} />
       <ZustandTest />

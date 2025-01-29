@@ -6,9 +6,11 @@ import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'nativewind';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
+import Toast from 'react-native-toast-message';
 
 import { GluestackUIProvider } from '../components/ui/gluestack-ui-provider';
 
+import { toastConfig } from '@/components/Toast';
 import { loadImages, loadFonts } from '@/theme';
 
 SplashScreen.preventAutoHideAsync();
@@ -55,6 +57,7 @@ export default function RootLayout(): ReactNode {
             }}
           />
         </Stack>
+        <Toast config={toastConfig} />
       </GluestackUIProvider>
     </QueryClientProvider>
   );
