@@ -17,10 +17,10 @@
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
     "web": "NODE_ENV=production expo start --web",
     "web:dev": "NODE_ENV=development expo start --web",
-    "build:ios:dev": "dotenvx run -f .env.development -- npx eas build --platform ios --local",
-    "build:ios": "dotenvx run -f .env.production -- npx eas build --platform ios --local",
-    "build:android:dev": "dotenvx run -f .env.development -- npx eas build --platform android --local",
-    "build:android": "dotenvx run -f .env.production -- npx eas build --platform android --local"
+    "build:ios:dev": "NODE_ENV=development dotenvx run -f .env.development -- npx eas build --platform ios --local",
+    "build:ios": "NODE_ENV=production dotenvx run -f .env.production -- npx eas build --platform ios --local",
+    "build:android:dev": "NODE_ENV=development dotenvx run -f .env.development -- npx eas build --platform android --local",
+    "build:android": "NODE_ENV=production dotenvx run -f .env.production -- npx eas build --platform android --local"
   },
   "dependencies": {
     "@expo/html-elements": "0.4.2",
