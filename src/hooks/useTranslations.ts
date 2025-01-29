@@ -11,7 +11,7 @@ const i18n = new I18n(
     cs,
     en,
   },
-  { defaultLocale: DEFAULT_LOCALE, enableFallback: true },
+  DEFAULT_LOCALE,
 );
 
 export const useTranslations = () => {
