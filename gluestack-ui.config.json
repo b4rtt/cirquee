@@ -4,7 +4,7 @@
     "css": "global.css"
   },
   "app": {
-    "entry": "src/routes/_layout.tsx",
+    "entry": "src/screens/_layout.tsx",
     "components": "components/ui"
   }
 }

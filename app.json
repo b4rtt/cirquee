@@ -20,7 +20,7 @@
       [
         "expo-router",
         {
-          "root": "./src/routes"
+          "root": "./src/screens"
         }
       ],
       "expo-localization"
