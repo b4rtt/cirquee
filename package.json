@@ -10,9 +10,9 @@
     "start": "NODE_ENV=production yarn expo start -c",
     "start:dev": "NODE_ENV=development yarn expo start -c",
     "android": "DARK_MODE=media NODE_ENV=production yarn expo start --android",
-    "android:dev": "DARK_MODE=media NODE_ENV=development yarn expo start --android",
+    "android:dev": "NODE_ENV=development yarn expo start --android",
     "ios": "DARK_MODE=media NODE_ENV=production yarn expo start --ios",
-    "ios:dev": "DARK_MODE=media NODE_ENV=development yarn expo start --ios",
+    "ios:dev": "NODE_ENV=development yarn expo start --ios",
     "format": "yarn prettier --config .prettierrc src/**/*.{ts,tsx} --write",
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
     "web": "DARK_MODE=media expo start --web"
