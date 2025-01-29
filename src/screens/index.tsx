@@ -7,6 +7,7 @@ import Logo from '../../assets/images/icons/test.svg';
 import { PushNotifications } from '@/components/PushNotifications';
 import User from '@/components/User';
 import { useTranslations } from '@/hooks/useTranslations';
+import config from '@/utils/config';
 
 const Home = () => {
   const { t } = useTranslations();
@@ -19,7 +20,9 @@ const Home = () => {
         backgroundColor: 'red',
         paddingTop: 100,
       }}>
-      <Text>{t('home.title')}</Text>
+      <Text>
+        {t('home.title')} {config.ENV}
+      </Text>
       <Button title="Go to Home" onPress={() => router.push('/home')} />
 
       <Logo width={100} height={100} />

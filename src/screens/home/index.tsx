@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <SafeAreaView
       style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-      className="bg-blue-500 dark:bg-red-500">
+      className="bg-blue-100 dark:bg-red-500">
       {(isLoading || isRefetching) && <Text>Loading...</Text>}
 
       {isError && <Text>Error: {error?.message}</Text>}

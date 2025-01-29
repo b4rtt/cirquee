@@ -7,21 +7,21 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     slug: process.env.EXPO_PUBLIC_SLUG ?? '',
     name: process.env.EXPO_PUBLIC_NAME ?? '',
     icon:
-      process.env.NODE_ENV === 'development'
+      process.env.EXPO_PUBLIC_ENV === 'development'
         ? './assets/images/icon-dev.png'
         : './assets/images/icon.png',
     ios: {
       ...config.ios,
       bundleIdentifier: process.env.EXPO_PUBLIC_IOS_BUNDLE_IDENTIFIER,
       googleServicesFile:
-        process.env.NODE_ENV === 'development'
+        process.env.EXPO_PUBLIC_ENV === 'development'
           ? './GoogleService-Info-dev.plist'
           : './GoogleService-Info.plist',
     },
     splash: {
       ...config.splash,
       image:
-        process.env.NODE_ENV === 'development'
+        process.env.EXPO_PUBLIC_ENV === 'development'
           ? './assets/images/splash-icon-dev.png'
           : './assets/images/splash-icon.png',
       resizeMode: 'contain',
@@ -32,20 +32,20 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       package: process.env.EXPO_PUBLIC_IOS_ANDROID_PACKAGE,
       adaptiveIcon: {
         foregroundImage:
-          process.env.NODE_ENV === 'development'
+          process.env.EXPO_PUBLIC_ENV === 'development'
             ? './assets/images/adaptive-icon-dev.png'
             : './assets/images/adaptive-icon.png',
         backgroundColor: '#ffffff',
       },
       googleServicesFile:
-        process.env.NODE_ENV === 'development'
+        process.env.EXPO_PUBLIC_ENV === 'development'
           ? './google-services-dev.json'
           : './google-services.json',
     },
     web: {
       ...config.web,
       favicon:
-        process.env.NODE_ENV === 'development'
+        process.env.EXPO_PUBLIC_ENV === 'development'
           ? './assets/images/favicon-dev.png'
           : './assets/images/favicon.png',
       bundler: 'metro',
