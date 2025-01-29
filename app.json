@@ -2,6 +2,8 @@
   "expo": {
     "owner": "b4rtt",
     "newArchEnabled": true,
+    "slug": "cirquee",
+    "name": "Cirquee",
     "version": "1.0.0",
     "platforms": ["ios", "android", "web"],
     "orientation": "portrait",

@@ -16,7 +16,8 @@
     "format": "yarn prettier --config .prettierrc src/**/*.{ts,tsx} --write",
     "lint": "yarn eslint . --ext .js,.jsx,.ts,.tsx",
     "web": "NODE_ENV=production expo start --web",
-    "web:dev": "NODE_ENV=development expo start --web"
+    "web:dev": "NODE_ENV=development expo start --web",
+    "build:ios:dev": "NODE_ENV=production npx eas build --platform ios --local"
   },
   "dependencies": {
     "@expo/html-elements": "0.4.2",
