@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "128762077946",
+    "project_id": "cirquee-41fb5",
+    "storage_bucket": "cirquee-41fb5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:128762077946:android:168909a73c2f0c6ca1df43",
+        "android_client_info": {
+          "package_name": "com.cirquee.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQ1GDhN91rq2KivaIJAwvI-4ASH8cV7mg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

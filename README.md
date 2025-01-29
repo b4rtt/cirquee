@@ -24,6 +24,7 @@ This is an advanced React Native project built using Expo and leveraging modern 
 - Expo CLI (version X.X.X)
 - EAS CLI (version X.X.X)
 - Yarn (version X.X.X)
+- [dotenvx](https://dotenvx.com/)
 
 ### Installation
 

@@ -1,7 +1,0 @@
-Add Firebase config files here
-
-google-services-dev.json
-google-services.json
-
-GoogleService-Info-dev.plist
-GoogleService-Info.plist
