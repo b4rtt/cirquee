@@ -28,7 +28,10 @@ const Home = () => {
 
       <Button title="Go to Index" onPress={() => router.back()} />
 
-      <Button title="Show" onPress={() => show({ text1: 'fdsf', type: 'tomatoToast' })} />
+      <Button
+        title="Show"
+        onPress={() => show({ text1: 'Title', text2: 'Description', type: 'customToast' })}
+      />
 
       <View style={{ height: 100 }} />
       <ZustandTest />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Text, View } from 'react-native';
 import { BaseToast, ErrorToast, BaseToastProps } from 'react-native-toast-message';
 
 export const toastConfig = {
@@ -26,16 +27,19 @@ export const toastConfig = {
     />
   ),
 
-  tomatoToast: ({ text1 = 'Default Text', ...props }: { text1?: string } & BaseToastProps) => (
-    <BaseToast
-      {...props}
-      style={{ borderLeftColor: 'tomato' }}
-      contentContainerStyle={{ paddingHorizontal: 15 }}
-      text1Style={{
-        fontSize: 15,
-        fontWeight: '400',
-      }}
-      text1={text1}
-    />
+  customToast: ({
+    text1,
+    text2,
+    ...props
+  }: { text1?: string; text2?: string } & BaseToastProps) => (
+    <View
+      style={{
+        width: '100%',
+        backgroundColor: 'tomato',
+      }}>
+      <Text>{text1}</Text>
+      <Text>{text2}</Text>
+      <Text>{JSON.stringify(props)}</Text>
+    </View>
   ),
 };

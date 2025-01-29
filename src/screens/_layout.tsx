@@ -6,19 +6,21 @@ import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'nativewind';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
 
 import { GluestackUIProvider } from '../components/ui/gluestack-ui-provider';
 
 import { toastConfig } from '@/components/Toast';
 import { loadImages, loadFonts } from '@/theme';
-
 SplashScreen.preventAutoHideAsync();
 const queryClient = new QueryClient();
 
 export default function RootLayout(): ReactNode {
   const { colorScheme, setColorScheme } = useColorScheme();
   setColorScheme('system');
+
+  const top = useSafeAreaInsets().top;
 
   useEffect(() => {
     const preload = async () => {
@@ -57,7 +59,7 @@ export default function RootLayout(): ReactNode {
             }}
           />
         </Stack>
-        <Toast config={toastConfig} />
+        <Toast config={toastConfig} topOffset={top} />
       </GluestackUIProvider>
     </QueryClientProvider>
   );
