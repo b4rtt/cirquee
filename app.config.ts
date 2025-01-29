@@ -51,6 +51,8 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       bundler: 'metro',
     },
     updates: {
+      enabled: false,
+      fallbackToCacheTimeout: 0,
       url: `https://u.expo.dev/${process.env.EXPO_PUBLIC_PROJECT_ID}`,
     },
     extra: {
