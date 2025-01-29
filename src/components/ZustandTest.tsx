@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button, Text } from 'react-native';
 
 import useStore, { StoreState } from '../../src/store/useStore';
