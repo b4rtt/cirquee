@@ -6,13 +6,11 @@ import User from '@/components/User';
 import ZustandTest from '@/components/ZustandTest';
 import ZustandView from '@/components/ZustandView';
 import { useData } from '@/hooks/useData';
-import { useToast } from '@/hooks/useToast';
 import { fonts } from '@/theme';
+import { showToast } from '@/utils/toast';
 
 const Home = () => {
   const { isLoading, isError, data, error, isRefetching } = useData();
-
-  const { show } = useToast();
 
   return (
     <View
@@ -30,7 +28,7 @@ const Home = () => {
 
       <Button
         title="Show"
-        onPress={() => show({ text1: 'Title', text2: 'Description', type: 'customToast' })}
+        onPress={() => showToast({ text1: 'Title', text2: 'Description', type: 'customToast' })}
       />
 
       <View style={{ height: 100 }} />

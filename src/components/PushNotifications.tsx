@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import { Text, View, Button, Platform } from 'react-native';
 
 import { useNotificationStore } from '@/store/useNotificationStore';
+import { showToast } from '@/utils/toast';
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -35,7 +36,7 @@ async function sendPushNotification(expoPushToken: string) {
 }
 
 function handleRegistrationError(errorMessage: string) {
-  console.error(errorMessage);
+  showToast({ text1: 'Error', text2: errorMessage, type: 'error' });
   throw new Error(errorMessage);
 }
 
