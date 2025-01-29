@@ -6,6 +6,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'nativewind';
 import type { ReactNode } from 'react';
 import { useEffect } from 'react';
+import { Text } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import Toast from 'react-native-toast-message';
 
@@ -40,6 +41,8 @@ export default function RootLayout(): ReactNode {
     <QueryClientProvider client={queryClient}>
       <GluestackUIProvider mode={colorScheme}>
         <StatusBar style={colorScheme} />
+
+        <Text style={{ marginTop: 100 }}>{JSON.stringify(colorScheme)}</Text>
 
         <Stack screenOptions={{}}>
           <Stack.Screen
