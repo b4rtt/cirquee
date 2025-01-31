@@ -116,18 +116,13 @@ export const PushNotifications = () => {
         lastNotificationResponse?.notification.request.content.data.url &&
         lastNotificationResponse.actionIdentifier === Notifications.DEFAULT_ACTION_IDENTIFIER
       ) {
-        // When the app is killed, this effect won't run immediately on app launch
-        // We need to handle this scenario in the app's entry point or in a dedicated notification handler
         console.log('Notification received:', lastNotificationResponse);
-
-        // Consider moving this logic to a separate function that can be called both here and in the app's entry point
         const handleNotification = () => {
           Linking.openURL(lastNotificationResponse.notification.request.content.data.url).catch(
             err => console.error('An error occurred', err),
           );
         };
 
-        // js wait 1 second
         setTimeout(() => {
           handleNotification();
         }, 1000);
@@ -138,9 +133,10 @@ export const PushNotifications = () => {
   }, [lastNotificationResponse]);
 
   return (
-    <View style={{}}>
+    <View className="mt-4 px-4 items-center">
+      <Text className="text-lg font-bold mb-2">Push notifications example</Text>
       <Text>Your Expo push token: {expoPushToken}</Text>
-      <View style={{ alignItems: 'center', justifyContent: 'center' }}>
+      <View className="items-center">
         <Text>Title: {notification?.request.content.title} </Text>
         <Text>Body: {notification?.request.content.body}</Text>
         <Text>Data: {notification && JSON.stringify(notification.request.content.data)}</Text>

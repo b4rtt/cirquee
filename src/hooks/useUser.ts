@@ -21,7 +21,11 @@ const useUser = () => {
     };
   }, [setUser, clearUser]);
 
-  return { user, setUser, clearUser };
+  const login = () => {
+    setUser({ id: 1, name: 'John Doe' });
+  };
+
+  return { user, setUser, clearUser, login };
 };
 
 export default useUser;

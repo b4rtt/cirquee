@@ -14,6 +14,7 @@ import { GluestackUIProvider } from '../components/ui/gluestack-ui-provider';
 import { toastConfig } from '@/components/Toast';
 import useActiveRoute from '@/store/useActiveRoute';
 import { loadImages, loadFonts } from '@/theme';
+import config from '@/utils/config';
 SplashScreen.preventAutoHideAsync();
 const queryClient = new QueryClient();
 
@@ -57,17 +58,21 @@ export default function RootLayout(): ReactNode {
           <Stack.Screen
             name="index"
             options={{
-              title: 'Expo Router',
-              animation: 'none',
-              headerShown: false,
+              title: 'Cirquee example app (' + config.ENV + ')',
             }}
           />
           <Stack.Screen
-            name="home/index"
+            name="posts/index"
             options={{
-              title: 'Home',
-              animation: 'none',
-              headerShown: false,
+              title: 'Posts',
+              headerBackButtonDisplayMode: 'minimal',
+            }}
+          />
+          <Stack.Screen
+            name="posts/[id]"
+            options={{
+              title: 'Post',
+              headerBackButtonDisplayMode: 'minimal',
             }}
           />
         </Stack>
