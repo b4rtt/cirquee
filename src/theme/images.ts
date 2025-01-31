@@ -13,3 +13,16 @@ const preloadImages = () =>
   });
 
 export const loadImages = async () => Promise.all(preloadImages());
+
+// svg images
+export const svgImages: { [key: string]: ReturnType<typeof require> } = {
+  logo: require('@/assets/images/logo.svg'),
+};
+
+// preload svg images
+const preloadSvgImages = () =>
+  Object.keys(svgImages).map(key => {
+    return Asset.fromModule(svgImages[key] as number).downloadAsync();
+  });
+
+export const loadSvgImages = async () => Promise.all(preloadSvgImages());
