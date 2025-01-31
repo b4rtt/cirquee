@@ -25,6 +25,7 @@ This is an advanced React Native project built using Expo and leveraging modern 
 - EAS CLI (version X.X.X)
 - Yarn (version X.X.X)
 - [dotenvx](https://dotenvx.com/)
+- [i18n-ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally)
 
 ### Installation
 
@@ -35,7 +36,7 @@ This is an advanced React Native project built using Expo and leveraging modern 
 
 2. Navigate to the project directory:
    ```
-   cd your-project
+   cd cirquee
    ```
 
 3. Install the dependencies using Yarn or npm:
@@ -53,8 +54,28 @@ This is an advanced React Native project built using Expo and leveraging modern 
    ```
    yarn start
    ```
+   or
+   ```
+   yarn start:dev
+   ```
 
-2. Use the Expo app on your mobile device or an emulator to run the app.
+2. Start the app on Android:
+   ```
+   yarn android
+   ```
+   or
+   ```
+   yarn android:dev
+   ```
+
+3. Start the app on Web:
+   ```
+   yarn web
+   ```
+   or
+   ```
+   yarn web:dev
+   ```
 
 ### Building the App
 
