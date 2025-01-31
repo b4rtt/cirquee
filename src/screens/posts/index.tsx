@@ -11,6 +11,7 @@ const Posts = () => {
     <SafeAreaView className="flex-1 items-center justify-center">
       <FlatList
         data={dataPosts}
+        className="w-full"
         renderItem={({ item }) => (
           <TouchableOpacity
             className="p-4 border-b border-gray-200"

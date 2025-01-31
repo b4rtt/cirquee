@@ -7,13 +7,12 @@ const useUser = () => {
 
   // Example effect to simulate fetching user data
   useEffect(() => {
-    const fetchUserData = async () => {
-      // Simulate an API call
-      const fetchedUser = { id: 1, name: 'John Doe' }; // Example user data
-      setUser(fetchedUser);
-    };
+    // const fetchUserData = async () => {
+    //   const fetchedUser = { id: 1, name: 'John Doe' }; // Example user data
+    //   setUser(fetchedUser);
+    // };
 
-    fetchUserData();
+    // fetchUserData();
 
     // Cleanup function to clear user data on unmount
     return () => {

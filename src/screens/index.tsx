@@ -10,6 +10,7 @@ import ZustandExample from '@/components/ZustandExample';
 import { useTranslations } from '@/hooks/useTranslations';
 import useUser from '@/hooks/useUser';
 import useActiveRoute from '@/store/useActiveRoute';
+import { isWeb } from '@/utils/deviceInfo';
 import { showToast } from '@/utils/toast';
 
 const Home = () => {
@@ -37,12 +38,12 @@ const Home = () => {
 
             <Button title="Open posts" onPress={() => router.push('/posts')} />
 
-            <PushNotifications />
+            {!isWeb && <PushNotifications />}
 
             <ZustandExample />
 
             <Text className="text-lg font-bold mt-4 text-center">Toast example</Text>
-            <View className="flex-row justify-center">
+            <View className="flex-row justify-center space-x-2">
               <Button
                 title="Show success"
                 onPress={() => showToast({ text1: 'Title', text2: 'Description', type: 'success' })}
