@@ -20,7 +20,9 @@
     "build:ios:dev": "dotenvx run -f .env.development -- npx eas build --platform ios --local",
     "build:ios": "dotenvx run -f .env.production -- npx eas build --platform ios --local",
     "build:android:dev": "dotenvx run -f .env.development -- npx eas build --platform android --local",
-    "build:android": "dotenvx run -f .env.production -- npx eas build --platform android --local"
+    "build:android": "dotenvx run -f .env.production -- npx eas build --platform android --local",
+    "build:web": "dotenvx run -f .env.production -- npx expo export --platform web",
+    "build:web:dev": "dotenvx run -f .env.development -- npx expo export --platform web"
   },
   "dependencies": {
     "@expo/html-elements": "0.4.2",
