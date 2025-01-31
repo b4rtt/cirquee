@@ -1,9 +1,7 @@
 import { Asset } from 'expo-asset';
 
 export const images: { [key: string]: ReturnType<typeof require> } = {
-  //   logo: require('@/assets/images/logo.svg'),
-  //   logo_sm: require('@/assets/images/logo-sm.png'),
-  //   logo_lg: require('@/assets/images/logo-lg.png'),
+  adaptiveIcon: require('assets/images/adaptive-icon.png'),
 };
 
 // preload images
@@ -16,7 +14,7 @@ export const loadImages = async () => Promise.all(preloadImages());
 
 // svg images
 export const svgImages: { [key: string]: ReturnType<typeof require> } = {
-  logo: require('@/assets/images/logo.svg'),
+  circus: require('assets/images/icons/circus.svg'),
 };
 
 // preload svg images

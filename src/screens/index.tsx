@@ -2,7 +2,7 @@ import { router } from 'expo-router';
 import React from 'react';
 import { Text, Button, SafeAreaView } from 'react-native';
 
-import Logo from '../../assets/images/icons/cirquee.svg';
+import Logo from '../../assets/images/icons/circus.svg';
 
 import { PushNotifications } from '@/components/PushNotifications';
 import User from '@/components/User';
