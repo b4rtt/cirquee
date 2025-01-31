@@ -15,8 +15,8 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       bundleIdentifier: process.env.EXPO_PUBLIC_IOS_BUNDLE_IDENTIFIER,
       googleServicesFile:
         process.env.EXPO_PUBLIC_ENV === 'development'
-          ? './firebase/GoogleService-Info-dev.plist'
-          : './firebase/GoogleService-Info.plist',
+          ? './GoogleService-Info-dev.plist'
+          : './GoogleService-Info.plist',
     },
     splash: {
       ...config.splash,
@@ -39,8 +39,8 @@ export default ({ config }: ConfigContext): ExpoConfig => {
       },
       googleServicesFile:
         process.env.EXPO_PUBLIC_ENV === 'development'
-          ? './firebase/google-services-dev.json'
-          : './firebase/google-services.json',
+          ? './google-services-dev.json'
+          : './google-services.json',
     },
     web: {
       ...config.web,
