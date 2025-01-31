@@ -1,7 +1,7 @@
 import '../../global.css';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { Stack, SplashScreen } from 'expo-router';
+import { Stack, SplashScreen, useSegments } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useColorScheme } from 'nativewind';
 import type { ReactNode } from 'react';
@@ -12,6 +12,7 @@ import Toast from 'react-native-toast-message';
 import { GluestackUIProvider } from '../components/ui/gluestack-ui-provider';
 
 import { toastConfig } from '@/components/Toast';
+import useActiveRoute from '@/store/useActiveRoute';
 import { loadImages, loadFonts } from '@/theme';
 SplashScreen.preventAutoHideAsync();
 const queryClient = new QueryClient();
@@ -21,6 +22,9 @@ export default function RootLayout(): ReactNode {
   setColorScheme('system');
 
   const top = useSafeAreaInsets().top;
+
+  const { activeRoute, setActiveRoute } = useActiveRoute();
+  const segments = useSegments();
 
   useEffect(() => {
     const preload = async () => {
@@ -36,12 +40,20 @@ export default function RootLayout(): ReactNode {
     preload();
   }, []);
 
+  useEffect(() => {
+    if (segments.length > 0) {
+      setActiveRoute(segments[0]);
+    } else {
+      setActiveRoute('index');
+    }
+  }, [segments]);
+
   return (
     <QueryClientProvider client={queryClient}>
       <GluestackUIProvider mode={colorScheme}>
         <StatusBar style={colorScheme} />
 
-        <Stack screenOptions={{}}>
+        <Stack screenOptions={{}} initialRouteName={activeRoute}>
           <Stack.Screen
             name="index"
             options={{

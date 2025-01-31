@@ -6,11 +6,13 @@ import User from '@/components/User';
 import ZustandTest from '@/components/ZustandTest';
 import ZustandView from '@/components/ZustandView';
 import { useData } from '@/hooks/useData';
+import useActiveRoute from '@/store/useActiveRoute';
 import { fonts } from '@/theme';
 import { showToast } from '@/utils/toast';
 
 const Home = () => {
   const { isLoading, isError, data, error, isRefetching } = useData();
+  const { activeRoute } = useActiveRoute();
 
   return (
     <SafeAreaView
@@ -25,6 +27,8 @@ const Home = () => {
       <Image source={{ uri: data?.image_uri }} style={{ width: 100, height: 100 }} />
 
       <Button title="Go to Index" onPress={() => router.back()} />
+
+      <Text>{activeRoute}</Text>
 
       <Button
         title="Show"

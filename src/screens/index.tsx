@@ -7,10 +7,12 @@ import Logo from '../../assets/images/icons/circus.svg';
 import { PushNotifications } from '@/components/PushNotifications';
 import User from '@/components/User';
 import { useTranslations } from '@/hooks/useTranslations';
+import useActiveRoute from '@/store/useActiveRoute';
 import config from '@/utils/config';
 
 const Home = () => {
   const { t } = useTranslations();
+  const { activeRoute } = useActiveRoute();
   return (
     <SafeAreaView
       style={{
@@ -21,7 +23,7 @@ const Home = () => {
         paddingTop: 100,
       }}>
       <Text>
-        {t('home.title')} {config.ENV}
+        {t('home.title')} {config.ENV} {activeRoute}
       </Text>
       <Button title="Go to Home" onPress={() => router.push('/home')} />
 
