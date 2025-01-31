@@ -42,12 +42,22 @@ const Home = () => {
             <ZustandExample />
 
             <Text className="text-lg font-bold mt-4 text-center">Toast example</Text>
-            <Button
-              title="Show"
-              onPress={() =>
-                showToast({ text1: 'Title', text2: 'Description', type: 'customToast' })
-              }
-            />
+            <View className="flex-row justify-center">
+              <Button
+                title="Show success"
+                onPress={() => showToast({ text1: 'Title', text2: 'Description', type: 'success' })}
+              />
+              <Button
+                title="Show error"
+                onPress={() => showToast({ text1: 'Title', text2: 'Description', type: 'error' })}
+              />
+              <Button
+                title="Show custom"
+                onPress={() =>
+                  showToast({ text1: 'Title', text2: 'Description', type: 'customToast' })
+                }
+              />
+            </View>
           </>
         )}
       </ScrollView>

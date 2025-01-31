@@ -49,6 +49,15 @@ export default function RootLayout(): ReactNode {
     }
   }, [segments]);
 
+  const headerStyle = {
+    headerStyle: {
+      backgroundColor: colorScheme === 'dark' ? 'black' : 'white',
+    },
+    headerTitleStyle: {
+      color: colorScheme === 'dark' ? 'white' : 'black',
+    },
+  };
+
   return (
     <QueryClientProvider client={queryClient}>
       <GluestackUIProvider mode={colorScheme}>
@@ -59,6 +68,7 @@ export default function RootLayout(): ReactNode {
             name="index"
             options={{
               title: 'Cirquee example app (' + config.ENV + ')',
+              ...headerStyle,
             }}
           />
           <Stack.Screen
@@ -66,6 +76,7 @@ export default function RootLayout(): ReactNode {
             options={{
               title: 'Posts',
               headerBackButtonDisplayMode: 'minimal',
+              ...headerStyle,
             }}
           />
           <Stack.Screen
@@ -73,6 +84,7 @@ export default function RootLayout(): ReactNode {
             options={{
               title: 'Post',
               headerBackButtonDisplayMode: 'minimal',
+              ...headerStyle,
             }}
           />
         </Stack>
