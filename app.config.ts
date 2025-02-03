@@ -29,7 +29,7 @@ export default ({ config }: ConfigContext): ExpoConfig => {
     },
     android: {
       ...config.android,
-      package: process.env.EXPO_PUBLIC_IOS_ANDROID_PACKAGE,
+      package: process.env.EXPO_PUBLIC_ANDROID_PACKAGE,
       adaptiveIcon: {
         foregroundImage:
           process.env.EXPO_PUBLIC_ENV === 'development'
